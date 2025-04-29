@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2>Implementações no Form</h2>
+        <ul>
+            <li>Formulário de cadastros com busca do CEP por fetch API</li>
+            <li>Máscara no CEP para incluir o "-"</li>
+            <li>Validação de preenchimento com JS nos campos de Dados Básicos</li>
+            <li><b>Obs.</b> Dentro do código JavaScript tem comentado como fazer as mesmas implementações com JS puro e com jQuery.</li>
+        </ul>
+    </div>
+    <hr>
+    <div class="container">
+        <form id="form">
+            <!-- Criando o Título do formulário -->
+            <div class="row mt-4">
+                <h4>Dados Básicos</h4>
+            </div>
+            <!-- BootStrap trabalha com 12 colunas -->
+            <div class="row">
+                <div class="col-3">
+                    <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" id="nome">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Sobrenome" id="sobrenome">
+                </div>
+                <div class="col-4">
+                    <input type="email" class="form-control" placeholder="E-mail" aria-label="E-mail" id="email">
+                </div>
+             </div> <!-- Fim da primeira linha -->
+
+             <!-- Criando o Título do formulário -->
+            <div class="row mt-3">
+                <h4>Dados de entrega</h4>
+            </div>
+            <!-- BootStrap trabalha com 12 colunas -->
+            <div class="row mb-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Endereço" id="logradouro" aria-label="Endereço">
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="bairro" placeholder="Bairro" aria-label="bairro">
+                </div>
+             </div> <!-- Fim da segunda linha -->
+
+             <div class="row mb-3 mt-3">
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary" id="btn-buscar-cep">Buscar</button>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" id="cep" placeholder="CEP" aria-label="CEP">
+                </div>
+                
+                <div class="col-5">
+                    <input type="text" class="form-control" placeholder="Cidade" id="cidade" aria-label="Cidade">
+                </div>
+                <div class="col-2">
+                    <input type="text" class="form-control" placeholder="UF" id="estado" aria-label="Estado">
+                </div>
+             </div> <!-- Fim da segunda linha -->
+             <button type="submit" class="btn btn-success">Enviar Pedido</button>
+        </form>
+    </div>
+    <hr>
+    <script src="./main.js"></script>
+</body>
+</html>
