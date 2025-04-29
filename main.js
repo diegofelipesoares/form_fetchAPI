@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const cep = document.getElementById('cep').value; //pegando o valor do campo cep
         const endpoint = `https://viacep.com.br/ws/${cep}/json/`; //montando a URL da requisição
 
-        //Chamada da API usando Fetch
+        //FETCH - Chamada da API usando Fetch
         fetch(endpoint).then(function(resposta){
             return resposta.json(); //convertendo a resposta para JSON
         })
@@ -112,4 +112,30 @@ document.addEventListener("DOMContentLoaded", function () {
         
 
     })
+})
+//API para GITHUB
+//recuperando o DOM
+document.addEventListener("DOMContentLoaded", function () {
+    const nameElement = document.getElementById("name");
+    const repositorioElement = document.getElementById("repositorios");
+    const followersElement = document.getElementById("seguidores");
+    const followingElement = document.getElementById("seguindo");
+    const linkELement = document.getElementById("link");
+    const usernameElement = document.getElementById("username");
+    const avatarElement = document.getElementById("avatar");
+
+
+    fetch("https://api.github.com/users/diegofelipesoares")
+        .then((response) => response.json())
+        .then((data) => {
+            nameElement.innerHTML = data.name;
+            repositorioElement.innerHTML = data.public_repos;
+            followersElement.innerHTML = data.followers;
+            followingElement.innerHTML = data.following;
+            linkELement.href = data.html_url;
+            usernameElement.innerHTML = data.login;
+            avatarElement.src = data.avatar_url;
+        })
+        .catch((error) => console.error("Erro ao buscar dados do GitHub:", error));
+
 })
